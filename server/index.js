@@ -7,11 +7,12 @@ import PostRoutes from './routes/posts.js';
 
 const app = express();
 
-app.use('/posts', PostRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+app.use('/posts', PostRoutes);
 
 // MongoDB Atlas
 const CONNECTION_URL = 'mongodb+srv://david:david123@cluster0.sye1n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
