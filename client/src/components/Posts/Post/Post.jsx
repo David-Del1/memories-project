@@ -49,15 +49,8 @@ function Post({ post, setCurrentId }) {
       <div 
         className={classes.details}
       >
+        
         <Typography 
-          variant="body2" 
-          color="textSecondary" 
-          component="h2"
-        >
-          {post.tags.map((tag) => `#${tag} `)}
-        </Typography>
-      </div>
-      <Typography 
         className={classes.title} 
         gutterBottom 
         variant="h5" 
@@ -65,13 +58,22 @@ function Post({ post, setCurrentId }) {
       >
         {post.title}
       </Typography>
+      </div>
       <CardContent>
         <Typography 
           variant="body2" 
           color="textSecondary" 
           component="p"
+          className={classes.message}
         >
           {post.message}
+        </Typography>
+        <Typography 
+          variant="body2" 
+          color="textSecondary" 
+          component="h2"
+        >
+          {post.tags.map((tag) => `#${tag} `)}
         </Typography>
       </CardContent>
       <CardActions 
@@ -85,7 +87,7 @@ function Post({ post, setCurrentId }) {
           <ThumbUpAltIcon 
             fontSize="small" 
           /> 
-            Like  {post.likeCount} 
+           &nbsp; Like &nbsp;{post.likeCount} 
           </Button>
         <Button 
           size="small" 

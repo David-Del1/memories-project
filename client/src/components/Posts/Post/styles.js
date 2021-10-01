@@ -17,9 +17,10 @@ export default makeStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderRadius: '15px',
+    borderRadius: '2px',
     height: '100%',
     position: 'relative',
+    boxShadow: '0px 2px 5px -2px black'
   },
   overlay: {
     position: 'absolute',
@@ -39,7 +40,7 @@ export default makeStyles({
   details: {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '20px',
+    marginTop: '15px',
   },
   title: {
     padding: '0 16px',
@@ -49,4 +50,7 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  message: {
+    paddingBottom: '20px',
+  }
 });
