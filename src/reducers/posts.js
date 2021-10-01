@@ -1,7 +1,6 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
-import Posts from "../components/Posts/Posts";
 
-export default (posts = [], action) => {
+const reducers = (posts = [], action) => {
   switch (action.type) {
     case FETCH_ALL:
       return action.payload;
@@ -15,3 +14,5 @@ export default (posts = [], action) => {
       return posts;
   }
 }
+
+export default reducers;
