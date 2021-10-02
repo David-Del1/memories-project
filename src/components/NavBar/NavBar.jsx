@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Avatar, Button, Typography, Toolbar } from '@material-ui/core';
 
@@ -6,52 +6,65 @@ import useStyles from './styles.js';
 
 function NavBar() {
   const classes = useStyles();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
-  const user = null;
+  console.log(user);
+
+  useEffect(() => {
+    const toek = user?.token;
+
+    // JWT
+
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, [])
 
   return (
     <AppBar 
         className={classes.appBar} 
-        colorPrimary
       >
-        <div 
-          style={{display: 'flex', flexDirection: 'column'}}
+        <div
+          className={classes.brandContainer}
         >
+          
           <Typography 
             className={classes.heading} 
             variant="h2" 
             align="center"
+            component={Link}
+            to="/"
           >
             Memre
           </Typography>
           <Typography 
-            variant="subtitle" 
+            variant="subtitle2" 
             align="center"
             style={{paddingBottom: '10px'}}
+            component={Link}
+            to="/"
           >
             Where Memories Live.
           </Typography>
-
+         
         </div>
         <Toolbar 
           className={classes.toolbar}
         >
-          {user ? (
+          {user?.result ? (
             <div
             className={classes.profile}
           >
             <Avatar 
-              className={classes.purple}
-              alt={user.result.name}
-              src={user.result.imageUrl}
+              className={classes.purple} 
+              alt={user?.result.name} 
+              src={user?.result.imageUrl}
             >
-              {user.results.name.charAt(0)}
-            </Avatar>
+                {user?.result.name.charAt(0)}
+              </Avatar>
             <Typography
               className={classes.userName}
               variant="h6"
             >
-              {user.result.name}
+              {user?.result.name}
             </Typography>
             <Button
               variant="contained"
