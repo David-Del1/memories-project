@@ -7,8 +7,8 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     boxShadow: '0 0 0 0',
-    borderBottom: '1px solid black',
     BackgroundColor: 'rgba(0,183,255, 1)'
   },
   heading: {
@@ -27,4 +27,3 @@ export default makeStyles((theme) => ({
     marginTop: '120px',
   }
 }));
-

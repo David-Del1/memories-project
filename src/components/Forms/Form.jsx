@@ -109,8 +109,7 @@ function Form({ currentId, setCurrentId }) {
           Submit
         </Button>
         <Button
-          variant="contained"
-          color="secondary"
+          variant="outlined"
           size="small"
           onClick={clear}
           fullWidth
