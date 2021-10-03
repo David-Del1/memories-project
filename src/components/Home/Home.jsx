@@ -24,14 +24,10 @@ function Home() {
   const dispatch = useDispatch();
   const query = useQuery();
   const history = useHistory();
-  const page = query.get('page');
+  const page = query.get('page') || 1;
   const searchQuery = query.get('searchQuery');
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
-
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [currentId, dispatch]);
 
   const searchPost = () => {
     if(search.trim() || tags) {
@@ -56,7 +52,10 @@ function Home() {
 
   return (
     <Grow in className={classes.mainContent}>
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" 
+        // style={{display: 'flex', flexDirection: 'column',
+        // alignItems: 'center'}}
+      >
           <h1 style={{
             borderBottom: '1px solid rgba(0, 0, 0, 0.2',
             width: '75%',
@@ -126,14 +125,23 @@ function Home() {
                 currentId={currentId} 
                 setCurrentId={setCurrentId}
               />
-              <Paper
-                className={classes.pagination}
-                elevation={6}
-              >
-                <Pagination />
-              </Paper>
+              
             </Grid>
           </Grid>
+          <Paper
+                className={classes.pagination}
+                elevation={6}
+                style={{
+                  boxShadow: 'none',
+                  backgroundColor: 'whitesmoke',
+                  width: '50%',
+                  justifySelf: 'center',
+                  padding: '50px 0',
+                  margin: 'auto',
+                }}
+              >
+                <Pagination page={page} />
+              </Paper>
         </Container>
       </Grow>
   )
