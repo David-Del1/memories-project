@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
@@ -11,7 +11,7 @@ import Form from '../Forms/Form';
 import Posts from '../Posts/Posts';
 
 import useStyles from './styles.js';
-import { getPosts, getPostsBySearch } from '../../actions/posts';
+import { getPostsBySearch } from '../../actions/posts';
 import Pagination from '../Pagination/Pagination';
 
 function useQuery() {
@@ -25,7 +25,7 @@ function Home() {
   const query = useQuery();
   const history = useHistory();
   const page = query.get('page') || 1;
-  const searchQuery = query.get('searchQuery');
+  // const searchQuery = query.get('searchQuery');
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
 
@@ -65,7 +65,6 @@ function Home() {
             Recent Posts
           </h1>
           <Grid
-            className={classes.mainContainer}
             container 
             justifyContent="space-between" 
             alignItems="stretch" 
