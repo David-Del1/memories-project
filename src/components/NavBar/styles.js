@@ -4,7 +4,7 @@ import { deepPurple } from '@material-ui/core/colors';
 export default makeStyles((theme) => ({
   appBar: {
     width: '100%',
-    marginBottom: '40px',
+    marginBottom: '60px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -13,10 +13,12 @@ export default makeStyles((theme) => ({
     BackgroundColor: 'rgba(0,183,255, 1)'
   },
   heading: {
+    marginTop: '10px',
     paddingLeft: '15px',
-    color: 'whitesmoke',
-    textShadow: '0px 2px 0px black',
+    textShadow: '0px 1px 0px black',
     fontFamily: 'Oleo Script, cursive',
+    fontSize: '3.5rem',
+    display: 'flex',
   },
   [theme.breakpoints.down('sm')]: {
     mainContainer: {
@@ -25,7 +27,7 @@ export default makeStyles((theme) => ({
 
   },
   mainContent: {
-    marginTop: '120px',
+    marginTop: '180px',
   },
   image: {
     marginLeft: '15px',
@@ -48,6 +50,19 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  logo: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '5px',
+    marginRight: '2px',
+    borderRadius: '50%',
+    width: '60px',
+    height: '60px',
+    backgroundColor: '#fff',
+    color: '#3f51b5',
+    textShadow: '0 0px 0px black',
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),

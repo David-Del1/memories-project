@@ -54,7 +54,7 @@ function NavBar() {
             component={Link}
             to="/"
           >
-            Memre
+            <div className={classes.logo}>M</div>emre
           </Typography>
           <Typography 
             variant="subtitle2" 
