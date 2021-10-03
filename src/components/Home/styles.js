@@ -27,4 +27,3 @@ export default makeStyles((theme) => ({
     marginTop: '120px',
   }
 }));
-
