@@ -10,7 +10,10 @@ function Posts({ setCurrentId }) {
   const classes = useStyles();
   
   return (
-    !posts.length ? <CircularProgress /> 
+    posts.length === 0 
+      ? <h1>No posts to show.</h1> 
+      : !posts.length 
+      ? <CircularProgress /> 
       : (
         <Grid 
           className={classes.container} 

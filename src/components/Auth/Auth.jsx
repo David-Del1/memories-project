@@ -8,23 +8,37 @@ import Icon from './Icon.jsx';
 
 import useStyles from './styles.js'
 import Input from './Input.jsx';
+import { signIn, signUp } from '../../actions/auth.js';
+
+const initialState = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  confirmPassword: ''
+}
 
 function Auth() {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
-  const [isSignUp, setIsSignUp] = useState(true);
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+     if(isSignUp) {
+       dispatch(signUp(formData, history));
+     } else {
+       dispatch(signIn(formData, history))
+     }
   }
 
-  const handleChange = () => {
-
-  }
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const switchMode = () => {
     setIsSignUp(!isSignUp);
@@ -39,7 +53,7 @@ function Auth() {
       dispatch({ type: 'AUTH', data: { result, token }});
 
       history.push('/');
-      window.location.reload();
+
     } catch (error) {
       console.log(error);
     }
@@ -142,7 +156,7 @@ function Auth() {
             <Grid item>
               <Button
                 onClick={switchMode}
-                style={{textDecoration: "underline"}}
+                style={{textDecoration: "underline", textTransform: 'none'}}
               >
                 {isSignUp ? 'Already have an account?' : 'Create an account'}
               </Button>

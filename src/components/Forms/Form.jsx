@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import useStyles from './styles.js';
 import { createPost, updatePost } from '../../actions/posts.js';
@@ -19,27 +20,38 @@ function Form({ currentId, setCurrentId }) {
   const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const user = JSON.parse(localStorage.getItem('profile'));
 
   useEffect(() => {
     if(post) setPostData(post);
   }, [post])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(currentId) {
-      dispatch(updatePost(currentId, postData));
+    if (!currentId) {
+      dispatch(createPost({ ...postData, name: user?.result?.name }, history));
     } else {
-      dispatch(createPost(postData));
+      dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
     }
-
     clear();
+  };
+
+  if(!user?.result?.name) {
+    return (
+      <Paper className={classes.paper}>
+        <Typography variant="h6" align="center">
+          Please sign in to create and interact with posts.
+        </Typography>
+      </Paper>
+    )
   }
 
   const clear = () => {
     setCurrentId(null);
     setPostData({
-      creator: '',
       title: '',
       message: '',
       tags: '',
@@ -56,16 +68,8 @@ function Form({ currentId, setCurrentId }) {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">
-          {currentId ? 'Editing' : 'Creating'} a Memory
+          {currentId ? 'Edit' : 'Post'} a Memory
         </Typography>
-        <TextField 
-          name="creator" 
-          variant="outlined" 
-          label="Creator" 
-          fullWidth 
-          value={postData.creator}
-          onChange={e => setPostData({ ...postData, creator: e.target.value })}
-        />
         <TextField 
           name="title" 
           variant="outlined" 
@@ -77,15 +81,17 @@ function Form({ currentId, setCurrentId }) {
         <TextField 
           name="message" 
           variant="outlined" 
-          label="Message" 
-          fullWidth 
+          label="Description..." 
+          fullWidth
+          multiline
+          rows={5}
           value={postData.message}
           onChange={e => setPostData({ ...postData, message: e.target.value })}
         />
         <TextField 
           name="tags" 
           variant="outlined" 
-          label="Tags" 
+          label="Tags (coma separated)" 
           fullWidth 
           value={postData.tags}
           onChange={e => setPostData({ ...postData, tags: e.target.value.split(',') })}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
@@ -12,6 +13,25 @@ import { deletePost, likePost } from '../../../actions/posts.js';
 function Post({ post, setCurrentId }) {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem('profile'));
+
+  const Likes = () => {
+    if(post.likes.length > 0) {
+      return post.likes.find(like => like === (user?.result?.googleId || user?.results?._id))
+        ? (
+          <>
+            <ThumbUpAltIcon
+              fontSize="small"
+            />
+            &nbsp;{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}` }
+          </>
+        ) : (
+          <><ThumbUpAltOutlined fontSize="small" />&nbsp;{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</>
+        )
+    }
+
+    return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
+  }
 
   return (
     <Card 
@@ -27,7 +47,7 @@ function Post({ post, setCurrentId }) {
         <Typography 
           variant="h6"
         >
-          {post.creator}
+          {post.name}
         </Typography>
         <Typography 
           variant="body2"
@@ -84,11 +104,8 @@ function Post({ post, setCurrentId }) {
           color="primary" 
           onClick={() => dispatch(likePost(post._id))}
         >
-          <ThumbUpAltIcon 
-            fontSize="small" 
-          /> 
-           &nbsp; Like &nbsp;{post.likeCount} 
-          </Button>
+          <Likes />
+        </Button>
         <Button 
           size="small" 
           color="primary" 
