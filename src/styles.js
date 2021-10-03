@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 export default makeStyles((theme) => ({
   appBar: {
     width: '100%',
-    marginBottom: '40px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -22,9 +21,6 @@ export default makeStyles((theme) => ({
       flexDirection: 'column-reverse'
     }
 
-  },
-  mainContent: {
-    marginTop: '120px',
   }
 }));
 

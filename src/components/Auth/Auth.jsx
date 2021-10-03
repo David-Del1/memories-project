@@ -59,7 +59,7 @@ function Auth() {
     }
   }
   const googleFailure = () => {
-    console.log('Google Sign in unsuccessful');
+    alert('Google Sign in unsuccessful');
   }
 
   return (
