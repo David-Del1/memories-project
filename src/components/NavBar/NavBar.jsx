@@ -14,8 +14,6 @@ function NavBar() {
   const history = useHistory();
   const location = useLocation();
 
-  console.log(user);
-
   const logOut = () => {
     dispatch({ type: 'LOGOUT' });
 
