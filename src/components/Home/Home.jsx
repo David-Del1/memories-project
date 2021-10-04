@@ -56,14 +56,7 @@ function Home() {
         // style={{display: 'flex', flexDirection: 'column',
         // alignItems: 'center'}}
       >
-          <h1 style={{
-            borderBottom: '1px solid rgba(0, 0, 0, 0.2',
-            width: '75%',
-            paddingBottom: '5px',
-            color: 'rgba(0, 0, 0, 0.7)'
-          }}>
-            Recent Posts
-          </h1>
+          
           <Grid
             container 
             justifyContent="space-between" 
