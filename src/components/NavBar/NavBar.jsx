@@ -99,8 +99,9 @@ function NavBar() {
             <Button
               component={Link}
               to="/auth"
+              color="primary"
               variant="contained"
-              style={{backgroundColor: 'aqua' }}
+              style={{color: 'white', border: '1px solid white' }}
             >
               Sign In
             </Button>
