@@ -25,7 +25,7 @@ function Home() {
   const query = useQuery();
   const history = useHistory();
   const page = query.get('page') || 1;
-  const searchQuery = query.get('searchQuery');
+  // const searchQuery = query.get('searchQuery');
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
 
