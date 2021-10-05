@@ -25,7 +25,7 @@ function Home() {
   const query = useQuery();
   const history = useHistory();
   const page = query.get('page') || 1;
-  // const searchQuery = query.get('searchQuery');
+  const searchQuery = query.get('searchQuery');
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
 
@@ -48,19 +48,15 @@ function Home() {
 
   const handleDelete = (tagToDelete) => setTags(tags.filter(tag => tag !== tagToDelete));
 
-  
-
   return (
     <Grow in className={classes.mainContent}>
         <Container maxWidth="xl" 
-        // style={{display: 'flex', flexDirection: 'column',
-        // alignItems: 'center'}}
       >
           
           <Grid
             container 
-            justifyContent="space-between" 
-            alignItems="stretch" 
+            justifyContent="space-between"
+            alignItems="stretch"
             spacing={3}
             className={classes.gridContainer}
           >
@@ -85,7 +81,7 @@ function Home() {
                 position="static"
                 color="inherit"
               >
-                <TextField 
+                <TextField
                   name="search"
                   variant="outlined"
                   label="Search Memories"

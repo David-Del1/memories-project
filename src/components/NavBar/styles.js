@@ -63,6 +63,7 @@ export default makeStyles((theme) => ({
     backgroundColor: '#fff',
     color: '#3f51b5',
     textShadow: '0 0px 0px black',
+    boxShadow: '0px 0px 2px 0px black'
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
