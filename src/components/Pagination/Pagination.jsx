@@ -17,6 +17,7 @@ function Pagination({ page }) {
 
   return (
     <PaginationContainer
+    style={{ width: '100%',}}
       classes={{ ul: classes.ul }}
       count={numberOfPages}
       page={Number(page) || 1}

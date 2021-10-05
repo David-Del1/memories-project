@@ -10,12 +10,6 @@ export default makeStyles((theme) => ({
     borderBottom: '1px solid black',
     BackgroundColor: 'rgba(0,183,255, 1)'
   },
-  heading: {
-    paddingLeft: '15px',
-    color: 'whitesmoke',
-    textShadow: '0px 2px 0px black',
-    fontFamily: 'Oleo Script, cursive',
-  },
   [theme.breakpoints.down('sm')]: {
     mainContainer: {
       flexDirection: 'column-reverse'

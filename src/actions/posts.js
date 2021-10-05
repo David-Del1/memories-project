@@ -1,9 +1,22 @@
-import {  FETCH_ALL, FETCH_BY_SEARCH, 
+import {  FETCH_ALL, FETCH_SINGLE_POST, FETCH_BY_SEARCH, 
           CREATE, UPDATE, DELETE, 
           START_LOADING, END_LOADING 
 } from '../constants/actionTypes';
 
 import * as api from '../api';
+
+export const getSinglePost = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: START_LOADING });
+
+    const { data } = await api.fetchSinglePost(id);
+
+    dispatch({ type: FETCH_SINGLE_POST, payload: data });
+    dispatch({ type: END_LOADING });
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 
 export const getPosts = (page) => async (dispatch) => {
   try {
@@ -29,10 +42,12 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
   }
 }
 
-export const createPost = (post) => async (dispatch) => {
+export const createPost = (post, history) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
     const { data } = await api.createPost(post);
+
+    history.push(`/posts/${data._id}`);
 
     dispatch({ type: CREATE, payload: data });
   } catch (error) {

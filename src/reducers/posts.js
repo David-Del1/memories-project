@@ -1,4 +1,4 @@
-import {  FETCH_ALL, FETCH_BY_SEARCH, 
+import {  FETCH_ALL, FETCH_SINGLE_POST, FETCH_BY_SEARCH, 
           CREATE, UPDATE, DELETE, START_LOADING, END_LOADING
   } from '../constants/actionTypes';
 
@@ -17,6 +17,8 @@ const reducers = (state = { isLoading: true, posts: [] }, action) => {
       };
     case FETCH_BY_SEARCH:
       return { ...state, posts: action.payload.data };
+    case FETCH_SINGLE_POST:
+      return { ...state, post: action.payload};
     case CREATE:
       return { ...state, posts: [...state.posts, action.payload] };
     case UPDATE:

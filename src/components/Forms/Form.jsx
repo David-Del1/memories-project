@@ -60,7 +60,7 @@ function Form({ currentId, setCurrentId }) {
   }
 
   return (
-    <Paper className={classes.paper} elevation={6}>
+    <Paper className={classes.paper} elevation={1}>
       <form 
         autoComplete="off" 
         noValidate 

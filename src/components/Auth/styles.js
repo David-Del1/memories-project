@@ -2,7 +2,7 @@
 
 export default makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(16),
+    marginTop: theme.spacing(20),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
