@@ -3,12 +3,10 @@ import moment from 'moment';
 import { Button, Typography } from '@material-ui/core';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import useStyles from './styles.js';
-import { useHistory } from 'react-router-dom'; 
 
 function PostHeader( {post, setCurrentId} ) {
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
-  const history = useHistory();
 
   return (
     <div className={classes.postHeader}>

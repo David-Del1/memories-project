@@ -16,7 +16,6 @@ export default makeStyles({
     justifyContent: 'space-evenly',
     borderRadius: '0px',
     height: '100%',
-    position: 'relative',
     boxShadow: '0px 2px 5px -2px black'
     
   },
