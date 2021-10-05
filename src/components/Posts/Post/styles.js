@@ -2,37 +2,22 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles({
   media: {
-    height: 0,
-    paddingTop: '56.25%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    paddingTop: '70%',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
     backgroundBlendMode: 'darken',
   },
   border: {
     border: 'solid',
   },
-  fullHeightCard: {
-    height: '100%',
-  },
   card: {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    borderRadius: '2px',
-    height: '100%',
     position: 'relative',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    borderRadius: '0px',
+    height: '100%',
     boxShadow: '0px 2px 5px -2px black'
-  },
-  overlay: {
-    position: 'absolute',
-    top: '20px',
-    left: '20px',
-    color: 'white',
-  },
-  overlay2: {
-    position: 'absolute',
-    top: '20px',
-    right: '20px',
-    color: 'white',
+    
   },
   grid: {
     display: 'flex',
@@ -49,6 +34,10 @@ export default makeStyles({
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  cardAction: {
+    display: 'block',
+    textAlign: 'initial',
   },
   message: {
     paddingBottom: '20px',

@@ -50,9 +50,8 @@ function Home() {
 
   return (
     <Grow in className={classes.mainContent}>
-        <Container maxWidth="xl" 
+        <Container maxWidth={false}
       >
-          
           <Grid
             container 
             justifyContent="space-between"
@@ -80,6 +79,7 @@ function Home() {
                 className={classes.appBarSearch}
                 position="static"
                 color="inherit"
+                elevation={1}
               >
                 <TextField
                   name="search"
@@ -118,14 +118,13 @@ function Home() {
           </Grid>
           <Paper
                 className={classes.pagination}
-                elevation={6}
+                elevation={0}
                 style={{
+                  display: 'flex',
+                  justifyContent: 'center',
                   boxShadow: 'none',
                   backgroundColor: 'whitesmoke',
-                  width: '50%',
-                  justifySelf: 'center',
-                  padding: '50px 0',
-                  margin: 'auto',
+                  width: '100%',
                 }}
               >
                 <Pagination page={page} />

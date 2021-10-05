@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    boxShadow: '0 0 0 0',
+    boxShadow: '0 0 5px 0 black',
     BackgroundColor: 'rgba(0,183,255, 1)'
   },
   heading: {
@@ -23,7 +23,7 @@ export default makeStyles((theme) => ({
   [theme.breakpoints.down('sm')]: {
     mainContainer: {
       flexDirection: 'column-reverse'
-    }
+    },
 
   },
   mainContent: {
@@ -33,18 +33,17 @@ export default makeStyles((theme) => ({
     marginLeft: '15px',
   },
   toolbar: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '400px',
+  
+    
   },
   profile: {
     display: 'flex',
-    justifyContent: 'space-between',
-    width: '360px',
+    // width: '360px',
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
+    
   },
   brandContainer: {
     display: 'flex',
@@ -68,5 +67,37 @@ export default makeStyles((theme) => ({
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+    marginRight: '10px'
   },
+  [theme.breakpoints.down('md')]: {
+    mainContainer: {
+      flexDirection: 'column-reverse'
+    },
+    purple: {
+      
+    },
+    userName: {
+      display: 'none',
+    },
+    logout: {
+      marginLeft: '20px'
+    },
+    heading: {
+      fontSize: '2.4rem',
+      paddingLeft: '10px',
+    },
+    logo: {
+      width: '40px',
+      height: '40px',
+    },
+    subtitle: {
+      fontSize: '0.8rem'
+    },
+  },
+  logout: {
+    width: '100px',
+    marginLeft: '40px'
+
+  }
+ 
 }));
