@@ -7,6 +7,7 @@ import { getSinglePost, getPostsBySearch } from '../../actions/posts.js';
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 
 import useStyles from './styles.js';
+import CommentSection from './CommentSection.jsx';
 
 
 
@@ -55,19 +56,25 @@ function PostDetails() {
           >
             {post.name}
           </Typography>
-          <Typography gutterBottom variant="body1" component="p">{post.message}</Typography>
-          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map(tag => `#${tag} `)}</Typography>
-          <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
-          <Divider style={{ margin: '20px 0' }} />
-          <Typography>Realtime Chat = Coming soon!</Typography>
-          <Divider style={{ margin: '20px 0' }} />
-          <Typography variant="body1">Comments - Coming soon!</Typography>
-          <Divider style={{ margin: '20px 0' }} />
-        </div>
-        <div className={classes.imageSection}>
+          <div className={classes.imageSection}>
           <img className={classes.media} src={post.selectedFile} 
           alt={post.title} />
         </div>
+          <Typography 
+            gutterBottom 
+            variant="body1" 
+            component="p"
+            style={{ textAlign: 'center', width: '100%', padding: '3rem 5rem 2rem 0'}}
+          >
+            {post.message}
+          </Typography>
+          <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map(tag => `#${tag} `)}</Typography>
+          <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
+          <Divider style={{ margin: '20px 0' }} />
+          <CommentSection post={post} />
+          <Divider style={{ margin: '20px 0' }} />
+        </div>
+        
       </div>
       {recommendedPosts?.length && (
         <div className={classes.section}>
@@ -93,7 +100,6 @@ function PostDetails() {
                   >
                     {name}
                   </Typography>
-                  {/* <img style={{ padding: '7px 0'}}src={selectedFile} width="200px" alt="" /> */}
                   <div 
                     style={{ height: '150px', marginBottom: '20px', backgroundImage: `url(${selectedFile})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat',}}>
 
