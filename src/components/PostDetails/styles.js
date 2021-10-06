@@ -21,8 +21,9 @@ export default makeStyles((theme) => ({
   },
   imageSection: {
     marginLeft: '20px',
+    width: '60%',
     [theme.breakpoints.down('sm')]: {
-      marginLeft: 0,
+      margin: 'auto',
     },
   },
   recommendedPosts: {
@@ -32,9 +33,12 @@ export default makeStyles((theme) => ({
     },
   },
   recommendedPostsItem: {
-    width: '30%', margin: '20px', padding: '10px', cursor: 'pointer', boxShadow: '0px 0px 6px -1px black', borderTop: '8px solid steelblue', borderRadius: '5px'
+    width: '300px', overflowX: 'scroll', margin: '10px', padding: '10px', cursor: 'pointer', boxShadow: '0px 0px 6px -1px black', borderTop: '8px solid steelblue', borderRadius: '5px', position: 'relative',
+    height: '360px',
+
   },
   loadingPaper: {
     display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', borderRadius: '15px', height: '39vh',
   },
+  
 }));
