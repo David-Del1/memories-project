@@ -88,7 +88,7 @@ function NavBar() {
                 className={classes.userName}
                 variant="h6"
               >
-                {user?.result.name}
+                Welcome, {user?.result.name.split(' ')[0]}
               </Typography>
             </div>
             <Button

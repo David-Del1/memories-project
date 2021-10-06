@@ -1,5 +1,6 @@
 import {  FETCH_ALL, FETCH_SINGLE_POST, FETCH_BY_SEARCH, 
-          CREATE, UPDATE, DELETE, START_LOADING, END_LOADING
+          CREATE, UPDATE, DELETE, START_LOADING, END_LOADING,
+          COMMENT
   } from '../constants/actionTypes';
 
 const reducers = (state = { isLoading: true, posts: [] }, action) => {
@@ -23,6 +24,15 @@ const reducers = (state = { isLoading: true, posts: [] }, action) => {
       return { ...state, posts: [...state.posts, action.payload] };
     case UPDATE:
       return { ...state, posts: state.posts.map((post) => (post._id === action.payload._id ? action.payload : post)) };
+    case COMMENT:
+      return { 
+        ...state,
+        posts: state.posts.map(post => {
+          if(post._id === action.payload_id) return action.payload;
+          
+          return post;
+        })
+      }
     case DELETE:
       return { ...state, posts: state.posts.filter((post) => post._id !== action.payload) };
     default:

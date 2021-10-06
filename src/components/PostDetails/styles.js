@@ -20,10 +20,11 @@ export default makeStyles((theme) => ({
     flex: 1,
   },
   imageSection: {
-    marginLeft: '20px',
-    width: '60%',
+    width: '80%',
+    margin: 'auto',
     [theme.breakpoints.down('sm')]: {
       margin: 'auto',
+      width: '100%'
     },
   },
   recommendedPosts: {
@@ -35,10 +36,25 @@ export default makeStyles((theme) => ({
   recommendedPostsItem: {
     width: '300px', overflowX: 'scroll', margin: '10px', padding: '10px', cursor: 'pointer', boxShadow: '0px 0px 6px -1px black', borderTop: '8px solid steelblue', borderRadius: '5px', position: 'relative',
     height: '360px',
+    [theme.breakpoints.down('md')]: {
+      width: '280px',
+      marginLeft: '-10px',
+    }
 
   },
   loadingPaper: {
     display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', borderRadius: '15px', height: '39vh',
+  },
+  commentsOuterContainer: {
+    display: 'flex',
+    // flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  commentsInnerContainer: {
+    height: '200px',
+    overflowY: 'auto',
+    marginRight: '30px',
+    width: '100%',
   },
   
 }));
