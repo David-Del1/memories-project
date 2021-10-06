@@ -65,7 +65,8 @@ function PostDetails() {
           <Divider style={{ margin: '20px 0' }} />
         </div>
         <div className={classes.imageSection}>
-          <img className={classes.media} src={post.selectedFile} alt="" />
+          <img className={classes.media} src={post.selectedFile} 
+          alt={post.title} />
         </div>
       </div>
       {recommendedPosts?.length && (
@@ -92,17 +93,21 @@ function PostDetails() {
                   >
                     {name}
                   </Typography>
-                  <img style={{ padding: '7px 0'}}src={selectedFile} width="200px" alt="" />
+                  {/* <img style={{ padding: '7px 0'}}src={selectedFile} width="200px" alt="" /> */}
+                  <div 
+                    style={{ height: '150px', marginBottom: '20px', backgroundImage: `url(${selectedFile})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat',}}>
+
+                  </div>
                   <Typography
                     gutterBottom
                     variant="subtitle2"
                   >
-                    {message}
+                    {message.split(' ').length > 20 ? message.split(' ').slice(0, 20).join(' ') + '...' : message }
                   </Typography>
                   <Typography
                     gutterBottom
                     variant="subtitle1"
-                    style={{ display: 'flex', alignItems: 'center', opacity: 0.6 }}
+                    style={{ display: 'flex', alignItems: 'center', opacity: 0.6, position: 'absolute', bottom: '3%' }}
                   >
                     <ThumbUpAltOutlined fontSize="small" /> &nbsp; {likes.length}
                   </Typography>
