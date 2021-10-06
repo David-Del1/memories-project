@@ -14,10 +14,9 @@ export default makeStyles((theme) => ({
   },
   heading: {
     marginTop: '10px',
-    paddingLeft: '15px',
     textShadow: '0px 1px 0px black',
     fontFamily: 'Oleo Script, cursive',
-    fontSize: '3.5rem',
+    fontSize: '3rem',
     display: 'flex',
   },
   [theme.breakpoints.down('sm')]: {
@@ -25,16 +24,6 @@ export default makeStyles((theme) => ({
       flexDirection: 'column-reverse'
     },
 
-  },
-  mainContent: {
-    marginTop: '180px',
-  },
-  image: {
-    marginLeft: '15px',
-  },
-  toolbar: {
-  
-    
   },
   profile: {
     display: 'flex',
@@ -49,6 +38,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    paddingLeft: '15px',
   },
   logo: {
     display: 'flex',
@@ -57,8 +47,8 @@ export default makeStyles((theme) => ({
     padding: '5px',
     marginRight: '2px',
     borderRadius: '50%',
-    width: '60px',
-    height: '60px',
+    width: '50px',
+    height: '50px',
     backgroundColor: '#fff',
     color: '#3f51b5',
     textShadow: '0 0px 0px black',
@@ -84,14 +74,13 @@ export default makeStyles((theme) => ({
     },
     heading: {
       fontSize: '2.4rem',
-      paddingLeft: '10px',
     },
     logo: {
       width: '40px',
       height: '40px',
     },
     subtitle: {
-      fontSize: '0.8rem'
+      fontSize: '0.8rem',
     },
   },
   logout: {

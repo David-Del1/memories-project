@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,7 +44,7 @@ function Form({ currentId, setCurrentId }) {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-          Please sign in to create and interact with posts.
+          Please <Link style={{ textDecoration: 'underline', cursor: 'pointer' }} to={'/auth'}>sign in</Link> to create and interact with posts.
         </Typography>
       </Paper>
     )

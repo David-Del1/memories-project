@@ -55,15 +55,15 @@ function Home() {
           <Grid
             container 
             justifyContent="space-between"
-            alignItems="stretch"
+            // alignItems="stretch"
             spacing={3}
             className={classes.gridContainer}
           >
             <Grid 
               item 
-              xs={12} 
-              sm={6}
+              sm={12}
               md={9}
+              xl={9}
             >
               <Posts 
                 setCurrentId={setCurrentId} 
@@ -71,9 +71,9 @@ function Home() {
             </Grid>
             <Grid 
               item 
-              xs={12} 
-              sm={6}
-              md={3} 
+              sm={12}
+              md={3}
+              // xl={1}
             >
               <AppBar
                 className={classes.appBarSearch}
