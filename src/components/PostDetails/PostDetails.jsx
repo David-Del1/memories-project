@@ -70,7 +70,10 @@ function PostDetails() {
           </Typography>
           <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map(tag => `#${tag} `)}</Typography>
           <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
-          <Divider style={{ margin: '20px 0' }} />
+          <Typography style={{ marginBottom: '0', padding: '20px 0 0px 0'}} variant="h6">
+            Comments
+          </Typography>
+          <Divider style={{ margin: '0px 0' }} />
           <CommentSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
         </div>

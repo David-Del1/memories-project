@@ -34,7 +34,15 @@ export default makeStyles((theme) => ({
     },
   },
   recommendedPostsItem: {
-    width: '300px', overflowX: 'scroll', margin: '10px', padding: '10px', cursor: 'pointer', boxShadow: '0px 0px 6px -1px black', borderTop: '8px solid steelblue', borderRadius: '5px', position: 'relative',
+    width: '300px', 
+    overflowX: 'scroll', 
+    margin: '10px', 
+    padding: '10px', 
+    cursor: 'pointer', 
+    boxShadow: '0px 0px 6px -1px black', 
+    borderTop: '8px solid steelblue', 
+    borderRadius: '5px', 
+    position: 'relative',
     height: '360px',
     [theme.breakpoints.down('md')]: {
       width: '280px',
@@ -47,14 +55,17 @@ export default makeStyles((theme) => ({
   },
   commentsOuterContainer: {
     display: 'flex',
-    // flexDirection: 'column',
     justifyContent: 'space-between',
   },
   commentsInnerContainer: {
     height: '200px',
+    margin: '10px 0',
     overflowY: 'auto',
-    marginRight: '30px',
+    padding: '5px 15px 5px 15px',
     width: '100%',
+    backgroundColor: 'whitesmoke',
+    borderRadius: '10px',
+    borderLeft: '8px solid steelblue'
   },
   
 }));
