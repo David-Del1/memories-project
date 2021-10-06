@@ -75,7 +75,7 @@ function PostDetails() {
           </Typography>
           <Divider style={{ margin: '0px 0' }} />
           <CommentSection post={post} />
-          <Divider style={{ margin: '20px 0' }} />
+          {/* <Divider style={{ margin: '20px 0' }} /> */}
         </div>
         
       </div>
