@@ -45,6 +45,8 @@ function Post({ post, setCurrentId }) {
       flexDirection: 'column',
       height: '100%',
       position: 'relative',
+      // border: '1px solid red',
+      padding: '0'
     }} 
     > 
     <PostHeader post={post} setCurrentId={setCurrentId} />  
