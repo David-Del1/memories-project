@@ -34,7 +34,7 @@
 <h2 align="center">Mmre</h2>
 
   <p align="center">
-    Mmre (pronounced "memory") is a social media web application where users can browse and search for posts (otherwise known as "Memories"), create a secure account or sign in with their Google account, and then create, like, and comment on other posts.  
+    Mmre (pronounced "memory") is a mobile friendly social media web application where users can browse and search for posts (otherwise known as "Memories"), create a secure account or sign in with their Google account, and then create, like, and comment on other posts.  
     <br />
 <!--     <a href="https://github.com/David-Del1/memories-project"><strong>Explore the docs »</strong></a> -->
     <br />
